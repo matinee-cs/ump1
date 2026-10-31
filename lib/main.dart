@@ -22,10 +22,6 @@ class UmpMusicApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF121016), // Dark Plum Accent
-        colorScheme: const theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF121016),
         colorScheme: const ColorScheme(
           brightness: Brightness.dark,
@@ -37,12 +33,6 @@ class UmpMusicApp extends StatelessWidget {
           onError: Colors.white,
           surface: Color(0xFF1E1A24),
           onSurface: Colors.white,
-        ),
-        textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
-      ),
-          primary: Color(0xFF9E7CFF), // One UI Soft Violet
-          surface: Color(0xFF1E1A24),
-          surfaceContainerHigh: Color(0xFF2A2433),
         ),
         textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
       ),
@@ -83,14 +73,12 @@ class AudioPlayerService {
   final List<Song> queue = [];
   int currentIndex = -1;
 
-  // Crossfade implementation helper
   Future<void> playSong(Song song) async {
     currentSong.value = song;
     try {
       var manifest = await _yt.videos.streamsClient.getManifest(song.id);
       var streamInfo = manifest.audioOnly.withHighestBitrate();
       
-      // Crossfade logic simulation: soft fade out then play next
       if (player.playing) {
         for (double i = 1.0; i >= 0.0; i -= 0.2) {
           await player.setVolume(i);
@@ -184,7 +172,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 }
 
 // ---------------------------------------------------------------------------
-// HOME SCREEN (Recommendations: Hindi, Punjabi, Haryanvi)
+// HOME SCREEN
 // ---------------------------------------------------------------------------
 
 class HomeScreen extends StatelessWidget {
@@ -198,7 +186,6 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -216,8 +203,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
-
-            // Regional Sections
             _buildSection("🔥 Trending Hindi Mix", "Hindi Hits 2026"),
             _buildSection("⚡ Punjabi Beats", "Punjabi Top Tracks"),
             _buildSection("🎧 Haryanvi Ragni & Beats", "Haryanvi Latest"),
