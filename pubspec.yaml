@@ -1,5 +1,5 @@
 name: ump_music
-description: A Samsung One UI styled music player with YouTube streaming.
+description: UMP - Unidentified Music Player (Samsung One UI Inspired)
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,10 +9,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  
+  # Audio Playback & Service
   just_audio: ^0.9.36
   audio_service: ^0.18.12
-  youtube_explode_dart: ^2.2.0
+  
+  # Youtube & Streaming Backend
+  youtube_explode_dart: ^2.2.1
+  
+  # UI & State Management
+  flutter_bloc: ^8.1.3
+  google_fonts: ^6.1.0
+  cached_network_image: ^3.3.1
+  palette_generator: ^0.3.3+3
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
