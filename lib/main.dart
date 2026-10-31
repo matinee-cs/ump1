@@ -23,7 +23,23 @@ class UmpMusicApp extends StatelessWidget {
         useMaterial3: true,
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF121016), // Dark Plum Accent
-        colorScheme: const ColorScheme.dark(
+        colorScheme: const theme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: const Color(0xFF121016),
+        colorScheme: const ColorScheme(
+          brightness: Brightness.dark,
+          primary: Color(0xFF9E7CFF),
+          onPrimary: Colors.white,
+          secondary: Color(0xFF9E7CFF),
+          onSecondary: Colors.white,
+          error: Colors.red,
+          onError: Colors.white,
+          surface: Color(0xFF1E1A24),
+          onSurface: Colors.white,
+        ),
+        textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
+      ),
           primary: Color(0xFF9E7CFF), // One UI Soft Violet
           surface: Color(0xFF1E1A24),
           surfaceContainerHigh: Color(0xFF2A2433),
