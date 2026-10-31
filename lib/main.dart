@@ -23,17 +23,7 @@ class UmpMusicApp extends StatelessWidget {
         useMaterial3: true,
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF121016),
-        colorScheme: const ColorScheme(
-          brightness: Brightness.dark,
-          primary: Color(0xFF9E7CFF),
-          onPrimary: Colors.white,
-          secondary: Color(0xFF9E7CFF),
-          onSecondary: Colors.white,
-          error: Colors.red,
-          onError: Colors.white,
-          surface: Color(0xFF1E1A24),
-          onSurface: Colors.white,
-        ),
+        primaryColor: const Color(0xFF9E7CFF),
         textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
       ),
       home: const MainNavigationScreen(),
@@ -192,7 +182,7 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("UMP", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.primary)),
+                    Text("UMP", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor)),
                     const Text("Unidentified Music Player", style: TextStyle(color: Colors.white54, fontSize: 12)),
                   ],
                 ),
